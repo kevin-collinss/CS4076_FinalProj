@@ -1,0 +1,9 @@
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/RecipeApplication.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/edit_cache.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/list_install_components.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/install.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/install/local.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/install/strip.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/RecipeApplication_autogen_timestamp_deps.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/CMakeFiles/RecipeApplication_autogen.dir

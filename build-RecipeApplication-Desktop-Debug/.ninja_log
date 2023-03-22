@@ -1,0 +1,9 @@
+# ninja log v5
+2	933	7011884809951383	RecipeApplication_autogen/timestamp	aa9fcc56f6e2cc2b
+2	933	7011884809951383	RecipeApplication_autogen/mocs_compilation.cpp	aa9fcc56f6e2cc2b
+2	933	7011884809951383	C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/RecipeApplication_autogen/timestamp	aa9fcc56f6e2cc2b
+2	933	7011884809951383	C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/RecipeApplication_autogen/mocs_compilation.cpp	aa9fcc56f6e2cc2b
+934	3187	7011884834168242	CMakeFiles/RecipeApplication.dir/RecipeApplication_autogen/mocs_compilation.cpp.obj	d04f94b49e8db53c
+940	3216	7011884834502851	CMakeFiles/RecipeApplication.dir/main.cpp.obj	bf94a3bb88876258
+946	3520	7011884837504636	CMakeFiles/RecipeApplication.dir/mainwindow.cpp.obj	224c51b6bb923d29
+3520	3766	7011884839925479	RecipeApplication.exe	66c11b76487a374c

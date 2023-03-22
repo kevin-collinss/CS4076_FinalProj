@@ -1,0 +1,66 @@
+Create GUI of a Cooking Recipe
+
+Must Use
+	- QMenu
+	- QCheckBox
+	- QRadioButton
+	- QSlider
+	- QGRidlayout
+	- QBoxLayout
+	
+Also try to use most of the following: 
+
+	Virtual functions
+	template classes
+	Multiple inheritance
+	namespaces
+	Programmer defined exceptions
+	Unions
+	Operator overloading
+	Abstract classes
+	Copy constructors (deep , shallow copy)
+	Bit structures
+	Advanced pre-processor directives
+	C++ Object Construction Sequence
+	Initializer List
+	C++ References
+	Pointers
+	Inheritance
+	Destructors
+	Memory management
+	Header files (inclusion guards)
+	Arrays and pointers
+	Friendship
+	Global variables
+	Private, Public, Protected
+	
+QMenu - The QMenu class provides a menu widget for use in menu bars, context menus, and other popup menus.
+		https://doc.qt.io/qt-6/qmenu.html
+		
+		- Meals
+		
+QCheckBox - The QCheckBox widget provides a checkbox with a text label. 
+		https://doc.qt.io/qt-6/qcheckbox.html
+		
+		- Allergens
+		
+QRadioButton - The QRadioButton widget provides a radio button with a text label.
+		https://doc.qt.io/qt-6/qradiobutton.html
+		
+		- Spice Level
+		
+QSlider - The QSlider widget provides a vertical or horizontal slider.
+		https://doc.qt.io/qt-6/qslider.html
+		
+		- Rating
+		
+QGridLayout - The QGridLayout class lays out widgets in a grid.
+		https://doc.qt.io/qt-6/qgridlayout.html
+		
+		- Signup form
+		- Input my own food item
+		
+QBoxLayout - The QBoxLayout class lines up child widgets horizontally or vertically.
+		https://doc.qt.io/qt-6/qboxlayout.html
+		
+		- Portion Amount
