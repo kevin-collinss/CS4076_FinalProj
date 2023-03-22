@@ -3,6 +3,7 @@ C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.h
  mmc:Q_OBJECT
  mdp:C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.h
  mdp:C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/RecipeApplication_autogen/moc_predefs.h
+ mdp:C:/QtDev/6.4.2/mingw_64/include/QtCore/QMap
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtCore/qalgorithms.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtCore/qanystringview.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtCore/qarraydata.h
@@ -112,8 +113,10 @@ C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/QMainWindow
+ mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qabstractslider.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h
+ mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qslider.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtwidgets-config.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtwidgetsexports.h

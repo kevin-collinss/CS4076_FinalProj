@@ -1,5 +1,6 @@
 C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/RecipeApplication_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.h \
   C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/RecipeApplication_autogen/moc_predefs.h \
+  C:/QtDev/6.4.2/mingw_64/include/QtCore/QMap \
   C:/QtDev/6.4.2/mingw_64/include/QtCore/qalgorithms.h \
   C:/QtDev/6.4.2/mingw_64/include/QtCore/qanystringview.h \
   C:/QtDev/6.4.2/mingw_64/include/QtCore/qarraydata.h \
@@ -109,8 +110,10 @@ C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/Re
   C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qabstractslider.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qslider.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
