@@ -1,8 +1,18 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "recipe.h"
+#include "fooditem.h"
 #include <QPixmap>
 #include <QVBoxLayout>
+#include <QCheckBox>
+#include <QDebug>
+
 using namespace std;
+
+//global variables
+Recipe* recipeBookPtr[6];
+//FoodItem* foodListPtr[5];
+int servings = 1;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,27 +20,33 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    /*QString picString = "C:/College/Year2_Sem2/CS4076/Final_Proj/pictures/egPic.jpg";
-    QPixmap pix(picString);
-    ui->label_pic->setPixmap(pix);*/
-
-    QVBoxLayout *hLayout = new QVBoxLayout;
-    hLayout ->addWidget(ui->checkBox);
-    hLayout ->addWidget(ui->checkBox_2);
-    hLayout ->addWidget(ui->checkBox_3);
-    hLayout ->addWidget(ui->checkBox_4);
-    hLayout ->addWidget(ui->checkBox_5);
-
-
-    this->setLayout(hLayout);
-
-
     connect(ui->verticalSlider,SIGNAL(valueChanged(int)),ui->label_pic,SLOT(setValue(int)));
     ui->verticalSlider->setTickInterval(5);
 
-    m_types.insert(1,"First Meal");
-    m_types.insert(2,"Second Meal");
+    FoodItem* foodItemA = new FoodItemWithCalories("Noodles",500);
+    FoodItem* foodItemB = new FoodItemWithCalories("Chicken",30);
+    FoodItem* foodItemC = new FoodItemWithCalories("Potato",500);
+    FoodItem* foodItemD = new FoodItem("Oyster Sauce");
+    FoodItem* foodItemE = new FoodItemWithCalories("Steak",600);
+    /*foodListPtr[0] = foodItemA;
+    foodListPtr[1] = foodItemB;
+    foodListPtr[2] = foodItemC;
+    foodListPtr[3] = foodItemD;
+    foodListPtr[4] = foodItemE;*/
 
+
+    Recipe* recipeA = new Recipe("Spaghetti", "Italian", {foodItemA, foodItemC});
+    Recipe* recipeB= new Recipe("Chow Mein", "Oriental Delicacy",{foodItemA, foodItemE});
+    Recipe* recipeC= new Recipe("Fajita", "Mexican Special",{foodItemA, foodItemB});
+    Recipe* recipeD= new Recipe("Chili Children", "Fresh",{foodItemA, foodItemC, foodItemE});
+    Recipe* recipeE= new Recipe("Coals", "Santa left them under the tree", {foodItemE});
+    Recipe* recipeF= new Recipe("Lava", "Death?", {foodItemD, foodItemC});
+    recipeBookPtr[0]= recipeA;
+    recipeBookPtr[1]= recipeB;
+    recipeBookPtr[2]= recipeC;
+    recipeBookPtr[3]= recipeD;
+    recipeBookPtr[4]= recipeE;
+    recipeBookPtr[5]= recipeF;
 
 }
 
@@ -41,28 +57,29 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_NoOfPpl_One_clicked()
 {
-
+    servings = 1;
 }
 
 
 void MainWindow::on_NoOfPpl_Two_clicked()
 {
-
+   servings = 2;
 }
 
 
 void MainWindow::on_NoOfPpl_Three_clicked()
 {
-
+    servings = 3;
 }
 
 
 void MainWindow::on_NoOfPpl_Four_clicked()
 {
-
+    servings = 4;
 }
 
-void MainWindow::on_verticalSlider_valueChanged(int value)
+
+void MainWindow::on_verticalSlider_valueChanged(int value )
 {
     QString picString1 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic.jpg";
     QString picString2 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic2.jpg";
@@ -75,18 +92,41 @@ void MainWindow::on_verticalSlider_valueChanged(int value)
     QPixmap pix4(picString4);
     QPixmap pix5(picString5);
 
-
     int recipeNo = floor(value / 20);
     if(recipeNo ==0){
-    ui->recipeLabel->setPixmap(pix1);
+    ui->recipeLabel->setText(printIng(0));
+    ui->label_pic->setPixmap(pix1);
     }else if(recipeNo==1){
-    ui->recipeLabel->setPixmap(pix2);
+    ui->recipeLabel->setText(printIng(2));
+    ui->label_pic->setPixmap(pix2);
     }else if(recipeNo==2){
-    ui->recipeLabel->setPixmap(pix3);
+    ui->recipeLabel->setText(printIng(3));
+    ui->label_pic->setPixmap(pix3);
     }else if(recipeNo==3){
-    ui->recipeLabel->setPixmap(pix4);
+    ui->recipeLabel->setText(printIng(4));
+    ui->label_pic->setPixmap(pix4);
     }else if(recipeNo==4){
-    ui->recipeLabel->setPixmap(pix5);
+    ui->recipeLabel->setText(printIng(5));
+    ui->label_pic->setPixmap(pix5);
     }
 }
 
+QString printIng(int i) {
+    QString list = "";
+
+    for (int j = 0; j < recipeBookPtr[i]->getIngredients().size(); j++) {
+        FoodItem* item = recipeBookPtr[i]->getIngredients().at(j);
+        list.append(item->getName());
+
+        // Check if the item is also an instance of FoodItemWithCalories
+        if (FoodItemWithCalories* itemWithCalories = dynamic_cast<FoodItemWithCalories*>(item)) {
+            list.append(" (" + QString::number(servings * itemWithCalories->getCalories()) + " calories)");
+        }
+
+        list.append("\n");
+    }
+
+    QString output = recipeBookPtr[i]->getName() + "\n" + recipeBookPtr[i]->getDescription() + "\n" + list;
+
+    return output;
+}
