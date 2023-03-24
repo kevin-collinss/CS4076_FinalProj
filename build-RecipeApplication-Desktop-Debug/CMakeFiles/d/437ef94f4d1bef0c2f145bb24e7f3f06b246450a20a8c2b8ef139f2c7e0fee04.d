@@ -1,13 +1,18 @@
 RecipeApplication_autogen/timestamp: \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/CMakeLists.txt \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/fooditem.cpp \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/fooditem.h \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/main.cpp \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.cpp \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.h \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.cpp \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.h \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/recipe.cpp \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/recipe.h \
   CMakeFiles/3.24.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \
   RecipeApplication_autogen/moc_predefs.h \
-  C:/QtDev/6.4.2/mingw_64/include/QtCore/QMap \
   C:/QtDev/6.4.2/mingw_64/include/QtCore/qalgorithms.h \
   C:/QtDev/6.4.2/mingw_64/include/QtCore/qanystringview.h \
   C:/QtDev/6.4.2/mingw_64/include/QtCore/qarraydata.h \
@@ -117,10 +122,8 @@ RecipeApplication_autogen/timestamp: \
   C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
-  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qabstractslider.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h \
-  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qslider.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \

@@ -1,4 +1,5 @@
-#include "foodItem.h"
+#include "fooditem.h"
+#include "quantity.h"
 
 FoodItem::FoodItem(const QString& name)
     : m_name(name)
@@ -9,12 +10,11 @@ QString FoodItem::getName() const
     return m_name;
 }
 
-FoodItemWithCalories::FoodItemWithCalories(const QString& name, int calories)
-    : FoodItem(name)
-    , m_calories(calories)
+FoodItemWithQuantity::FoodItemWithQuantity(const QString& name, Quantity quantity)
+    : FoodItem(name), m_quantity(quantity), m_quantityInOunces(quantity.isOunces)
 {}
 
-int FoodItemWithCalories::getCalories() const
+double FoodItemWithQuantity::getQuantity() const
 {
-    return m_calories;
+    return m_quantityInOunces ? m_quantity.ounces : m_quantity.grams;
 }

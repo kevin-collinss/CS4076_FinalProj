@@ -21,6 +21,8 @@ set(PROJECT_SOURCES
         recipe.cpp
         fooditem.h
         fooditem.cpp
+        quantity.h
+        quantity.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -39,15 +40,18 @@ public:
     QRadioButton *NoOfPpl_Three;
     QRadioButton *NoOfPpl_Four;
     QRadioButton *NoOfPpl_One;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_2;
-    QCheckBox *checkBox_4;
-    QCheckBox *checkBox_3;
-    QCheckBox *checkBox_5;
     QSlider *verticalSlider;
     QLabel *recipeLabel;
+    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout;
+    QCheckBox *checkBox_2;
+    QCheckBox *checkBox_3;
+    QCheckBox *checkBox_4;
+    QCheckBox *checkBox_5;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QRadioButton *ounces;
+    QRadioButton *grams;
     QMenuBar *menubar;
     QMenu *menuHome;
     QStatusBar *statusbar;
@@ -57,6 +61,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(860, 544);
+        MainWindow->setAutoFillBackground(false);
         actionHome = new QAction(MainWindow);
         actionHome->setObjectName("actionHome");
         actionAbout = new QAction(MainWindow);
@@ -69,7 +74,7 @@ public:
         label_pic->setAutoFillBackground(true);
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(11, 466, 471, 24));
+        gridLayoutWidget->setGeometry(QRect(11, 466, 471, 28));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -93,48 +98,68 @@ public:
 
         gridLayout->addWidget(NoOfPpl_One, 0, 0, 1, 1);
 
+        verticalSlider = new QSlider(centralwidget);
+        verticalSlider->setObjectName("verticalSlider");
+        verticalSlider->setGeometry(QRect(770, 30, 25, 451));
+        verticalSlider->setOrientation(Qt::Vertical);
+        verticalSlider->setInvertedControls(false);
+        verticalSlider->setTickPosition(QSlider::NoTicks);
+        verticalSlider->setTickInterval(18);
+        recipeLabel = new QLabel(centralwidget);
+        recipeLabel->setObjectName("recipeLabel");
+        recipeLabel->setGeometry(QRect(140, 80, 371, 211));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(recipeLabel->sizePolicy().hasHeightForWidth());
+        recipeLabel->setSizePolicy(sizePolicy);
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Stencil")});
+        font.setPointSize(20);
+        recipeLabel->setFont(font);
+        recipeLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(11, 99, 90, 311));
+        layoutWidget->setGeometry(QRect(110, 140, 21, 141));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        checkBox = new QCheckBox(layoutWidget);
-        checkBox->setObjectName("checkBox");
-
-        verticalLayout->addWidget(checkBox);
-
         checkBox_2 = new QCheckBox(layoutWidget);
         checkBox_2->setObjectName("checkBox_2");
-        checkBox_2->setTristate(false);
 
         verticalLayout->addWidget(checkBox_2);
-
-        checkBox_4 = new QCheckBox(layoutWidget);
-        checkBox_4->setObjectName("checkBox_4");
-
-        verticalLayout->addWidget(checkBox_4);
 
         checkBox_3 = new QCheckBox(layoutWidget);
         checkBox_3->setObjectName("checkBox_3");
 
         verticalLayout->addWidget(checkBox_3);
 
+        checkBox_4 = new QCheckBox(layoutWidget);
+        checkBox_4->setObjectName("checkBox_4");
+
+        verticalLayout->addWidget(checkBox_4);
+
         checkBox_5 = new QCheckBox(layoutWidget);
         checkBox_5->setObjectName("checkBox_5");
 
         verticalLayout->addWidget(checkBox_5);
 
-        verticalSlider = new QSlider(centralwidget);
-        verticalSlider->setObjectName("verticalSlider");
-        verticalSlider->setGeometry(QRect(770, 30, 25, 451));
-        verticalSlider->setOrientation(Qt::Vertical);
-        verticalSlider->setInvertedControls(false);
-        verticalSlider->setTickPosition(QSlider::TicksBothSides);
-        verticalSlider->setTickInterval(20);
-        recipeLabel = new QLabel(centralwidget);
-        recipeLabel->setObjectName("recipeLabel");
-        recipeLabel->setGeometry(QRect(170, 80, 201, 81));
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(10, 430, 133, 24));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        ounces = new QRadioButton(widget);
+        ounces->setObjectName("ounces");
+
+        horizontalLayout->addWidget(ounces);
+
+        grams = new QRadioButton(widget);
+        grams->setObjectName("grams");
+
+        horizontalLayout->addWidget(grams);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -165,12 +190,13 @@ public:
         NoOfPpl_Three->setText(QCoreApplication::translate("MainWindow", "3 Serving", nullptr));
         NoOfPpl_Four->setText(QCoreApplication::translate("MainWindow", "4 Serving", nullptr));
         NoOfPpl_One->setText(QCoreApplication::translate("MainWindow", "1 Serving", nullptr));
-        checkBox->setText(QCoreApplication::translate("MainWindow", "Ingredient 1", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("MainWindow", "Ingredient 2", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("MainWindow", "Ingredient 3", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("MainWindow", "Ingredient 4", nullptr));
-        checkBox_5->setText(QCoreApplication::translate("MainWindow", "Ingredient 5", nullptr));
         recipeLabel->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        checkBox_2->setText(QString());
+        checkBox_3->setText(QString());
+        checkBox_4->setText(QString());
+        checkBox_5->setText(QString());
+        ounces->setText(QCoreApplication::translate("MainWindow", "Grams", nullptr));
+        grams->setText(QCoreApplication::translate("MainWindow", "Ounces", nullptr));
         menuHome->setTitle(QCoreApplication::translate("MainWindow", "Home", nullptr));
     } // retranslateUi
 

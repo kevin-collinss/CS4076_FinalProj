@@ -10,29 +10,29 @@ Must Use
 	
 Also try to use most of the following: 
 
-	Virtual functions
-	template classes
-	Multiple inheritance
-	namespaces
+	Virtual functions - 
+	template classes - adding weights - int + doubles
+	Multiple inheritance 
+	namespaces - 
 	Programmer defined exceptions
 	Unions
 	Operator overloading
-	Abstract classes
-	Copy constructors (deep , shallow copy)
-	Bit structures
+	Abstract classes - a food obj
+	Copy constructors (deep , shallow copy) - 
+	Bit structures - 
 	Advanced pre-processor directives
 	C++ Object Construction Sequence
 	Initializer List
-	C++ References
-	Pointers
-	Inheritance
+	C++ References 
+	Pointers ✓
+	Inheritance ✓
 	Destructors
 	Memory management
-	Header files (inclusion guards)
-	Arrays and pointers
-	Friendship
-	Global variables
-	Private, Public, Protected
+	Header files (inclusion guards) ✓
+	Arrays and pointers - ✓
+	Friendship - 
+	Global variables - ✓
+	Private, Public, Protected - ✓
 	
 QMenu - The QMenu class provides a menu widget for use in menu bars, context menus, and other popup menus.
 		https://doc.qt.io/qt-6/qmenu.html

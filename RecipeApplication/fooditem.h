@@ -1,11 +1,10 @@
 #ifndef FOODITEM_H
 #define FOODITEM_H
 
+#include "quantity.h"
 #include <QString>
 
-class FoodItem
-
-{
+class FoodItem {
 public:
     FoodItem(const QString& name);
     virtual QString getName() const;
@@ -14,14 +13,14 @@ private:
     QString m_name;
 };
 
-class FoodItemWithCalories : public FoodItem
-{
+class FoodItemWithQuantity : public FoodItem {
 public:
-    FoodItemWithCalories(const QString& name, int calories);
-    int getCalories() const;
+    FoodItemWithQuantity(const QString& name, Quantity quantity);
+    double getQuantity() const;
 
 private:
-    int m_calories;
+    Quantity m_quantity;
+    bool m_quantityInOunces;
 };
 
 #endif // FOODITEM_H

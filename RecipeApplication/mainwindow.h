@@ -15,6 +15,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    QString printIng(int i);
+
 
 
 private slots:
@@ -35,10 +37,14 @@ private slots:
 
 
 
+    void on_grams_clicked();
+
+    void on_ounces_clicked();
+
 private:
     Ui::MainWindow *ui;
 
 };
 
-QString printIng(int i);
+
 #endif // MAINWINDOW_H

@@ -23,16 +23,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->verticalSlider,SIGNAL(valueChanged(int)),ui->label_pic,SLOT(setValue(int)));
     ui->verticalSlider->setTickInterval(5);
 
-    FoodItem* foodItemA = new FoodItemWithCalories("Noodles",500);
-    FoodItem* foodItemB = new FoodItemWithCalories("Chicken",30);
-    FoodItem* foodItemC = new FoodItemWithCalories("Potato",500);
+    FoodItem* foodItemA = new FoodItemWithGrams("Noodles",500);
+    FoodItem* foodItemB = new FoodItemWithGrams("Chicken",30);
+    FoodItem* foodItemC = new FoodItemWithGrams("Potato",500);
     FoodItem* foodItemD = new FoodItem("Oyster Sauce");
-    FoodItem* foodItemE = new FoodItemWithCalories("Steak",600);
-    /*foodListPtr[0] = foodItemA;
-    foodListPtr[1] = foodItemB;
-    foodListPtr[2] = foodItemC;
-    foodListPtr[3] = foodItemD;
-    foodListPtr[4] = foodItemE;*/
+    FoodItem* foodItemE = new FoodItemWithGrams("Steak",600);
 
 
     Recipe* recipeA = new Recipe("Spaghetti", "Italian", {foodItemA, foodItemC});
@@ -48,6 +43,12 @@ MainWindow::MainWindow(QWidget *parent)
     recipeBookPtr[4]= recipeE;
     recipeBookPtr[5]= recipeF;
 
+
+
+    QPixmap defaultPic("C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic.jpg");
+    ui->recipeLabel->setText(printIng(0));
+    ui->label_pic->setPixmap(defaultPic);
+
 }
 
 MainWindow::~MainWindow()
@@ -58,26 +59,26 @@ MainWindow::~MainWindow()
 void MainWindow::on_NoOfPpl_One_clicked()
 {
     servings = 1;
-}
 
+}
 
 void MainWindow::on_NoOfPpl_Two_clicked()
 {
    servings = 2;
-}
 
+}
 
 void MainWindow::on_NoOfPpl_Three_clicked()
 {
     servings = 3;
-}
 
+}
 
 void MainWindow::on_NoOfPpl_Four_clicked()
 {
     servings = 4;
-}
 
+}
 
 void MainWindow::on_verticalSlider_valueChanged(int value )
 {
@@ -97,30 +98,30 @@ void MainWindow::on_verticalSlider_valueChanged(int value )
     ui->recipeLabel->setText(printIng(0));
     ui->label_pic->setPixmap(pix1);
     }else if(recipeNo==1){
-    ui->recipeLabel->setText(printIng(2));
+    ui->recipeLabel->setText(printIng(1));
     ui->label_pic->setPixmap(pix2);
     }else if(recipeNo==2){
-    ui->recipeLabel->setText(printIng(3));
+    ui->recipeLabel->setText(printIng(2));
     ui->label_pic->setPixmap(pix3);
     }else if(recipeNo==3){
-    ui->recipeLabel->setText(printIng(4));
+    ui->recipeLabel->setText(printIng(3));
     ui->label_pic->setPixmap(pix4);
     }else if(recipeNo==4){
-    ui->recipeLabel->setText(printIng(5));
+    ui->recipeLabel->setText(printIng(4));
     ui->label_pic->setPixmap(pix5);
     }
 }
 
-QString printIng(int i) {
+QString MainWindow::printIng(int i) {
     QString list = "";
 
     for (int j = 0; j < recipeBookPtr[i]->getIngredients().size(); j++) {
         FoodItem* item = recipeBookPtr[i]->getIngredients().at(j);
         list.append(item->getName());
 
-        // Check if the item is also an instance of FoodItemWithCalories
-        if (FoodItemWithCalories* itemWithCalories = dynamic_cast<FoodItemWithCalories*>(item)) {
-            list.append(" (" + QString::number(servings * itemWithCalories->getCalories()) + " calories)");
+        // Check if the item is also an instance of FoodItemWithGrams
+        if (FoodItemWithGrams* itemWithGrams = dynamic_cast<FoodItemWithGrams*>(item)) {
+            list.append(" (" + QString::number(servings * itemWithGrams->getGrams()) + " Grams)");
         }
 
         list.append("\n");
@@ -130,3 +131,15 @@ QString printIng(int i) {
 
     return output;
 }
+
+void MainWindow::on_grams_clicked()
+{
+
+}
+
+
+void MainWindow::on_ounces_clicked()
+{
+
+}
+
