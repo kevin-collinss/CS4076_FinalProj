@@ -23,6 +23,7 @@ set(PROJECT_SOURCES
         fooditem.cpp
         quantity.h
         quantity.cpp
+        unitconversion.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

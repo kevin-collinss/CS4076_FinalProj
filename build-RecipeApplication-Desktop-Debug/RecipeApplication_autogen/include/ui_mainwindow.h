@@ -21,6 +21,7 @@
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -45,6 +46,14 @@ public:
     QRadioButton *grams;
     QRadioButton *ounces;
     QWidget *checkBoxesWidget;
+    QLabel *nameplate;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_5;
+    QLabel *label_4;
+    QLabel *label_3;
+    QLabel *label_2;
+    QLabel *label;
     QMenuBar *menubar;
     QMenu *menuHome;
     QStatusBar *statusbar;
@@ -63,7 +72,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         label_pic = new QLabel(centralwidget);
         label_pic->setObjectName("label_pic");
-        label_pic->setGeometry(QRect(540, 99, 161, 311));
+        label_pic->setGeometry(QRect(540, 99, 191, 311));
         label_pic->setAutoFillBackground(true);
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
@@ -94,9 +103,10 @@ public:
         verticalSlider = new QSlider(centralwidget);
         verticalSlider->setObjectName("verticalSlider");
         verticalSlider->setGeometry(QRect(770, 30, 25, 451));
+        verticalSlider->setMaximum(100);
         verticalSlider->setOrientation(Qt::Vertical);
         verticalSlider->setInvertedControls(false);
-        verticalSlider->setTickPosition(QSlider::TicksAbove);
+        verticalSlider->setTickPosition(QSlider::NoTicks);
         verticalSlider->setTickInterval(20);
         recipeLabel = new QLabel(centralwidget);
         recipeLabel->setObjectName("recipeLabel");
@@ -130,6 +140,53 @@ public:
         checkBoxesWidget = new QWidget(centralwidget);
         checkBoxesWidget->setObjectName("checkBoxesWidget");
         checkBoxesWidget->setGeometry(QRect(100, 150, 31, 121));
+        nameplate = new QLabel(centralwidget);
+        nameplate->setObjectName("nameplate");
+        nameplate->setGeometry(QRect(60, 20, 531, 41));
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Stencil")});
+        font1.setPointSize(24);
+        nameplate->setFont(font1);
+        nameplate->setAlignment(Qt::AlignCenter);
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(800, 20, 41, 451));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label_5 = new QLabel(widget);
+        label_5->setObjectName("label_5");
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Stencil")});
+        font2.setPointSize(11);
+        label_5->setFont(font2);
+
+        verticalLayout->addWidget(label_5);
+
+        label_4 = new QLabel(widget);
+        label_4->setObjectName("label_4");
+        label_4->setFont(font2);
+
+        verticalLayout->addWidget(label_4);
+
+        label_3 = new QLabel(widget);
+        label_3->setObjectName("label_3");
+        label_3->setFont(font2);
+
+        verticalLayout->addWidget(label_3);
+
+        label_2 = new QLabel(widget);
+        label_2->setObjectName("label_2");
+        label_2->setFont(font2);
+
+        verticalLayout->addWidget(label_2);
+
+        label = new QLabel(widget);
+        label->setObjectName("label");
+        label->setFont(font2);
+
+        verticalLayout->addWidget(label);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -163,6 +220,12 @@ public:
         recipeLabel->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         grams->setText(QCoreApplication::translate("MainWindow", "Grams", nullptr));
         ounces->setText(QCoreApplication::translate("MainWindow", "Ounces", nullptr));
+        nameplate->setText(QCoreApplication::translate("MainWindow", "EL FUEGO  THE HOUSE OF SPICE", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "GO!", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "YOU", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "CAN", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "HOT", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "HOW", nullptr));
         menuHome->setTitle(QCoreApplication::translate("MainWindow", "Home", nullptr));
     } // retranslateUi
 

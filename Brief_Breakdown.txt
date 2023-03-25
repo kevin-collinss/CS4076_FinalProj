@@ -10,57 +10,27 @@ Must Use
 	
 Also try to use most of the following: 
 
-	Virtual functions -  ✓
-	template classes - 
+      ✓	Virtual functions - fooditem.h line:12
+      ✓	template classes - unitconversion.h line:4
 	Multiple inheritance 
-	namespaces - 
+      ✓	namespaces - mainwindow.cpp line:15
 	Programmer defined exceptions
-	Unions
+      ✓	Unions - quantity.h line:5
 	Operator overloading
-	Abstract classes - a food obj
-	Copy constructors (deep , shallow copy) - 
+	Abstract classes 
+      ✓	Copy constructors (deep , shallow copy) - fooditem.cpp line:8
 	Bit structures - 
 	Advanced pre-processor directives
-	C++ Object Construction Sequence
-	Initializer List ✓
-	C++ References 
-	Pointers ✓
-	Inheritance ✓
-	Destructors ✓
+      ✓	C++ Object Construction Sequence- mainwindow.cpp line:22
+      ✓	Initializer List - recipe.cpp line:4
+      ✓	C++ References - mainwindow.cpp line:215
+      ✓	Pointers - mainwindow.cpp line:25
+      ✓	Inheritance - fooditem.h line:20
+      ✓	Destructors - footitem.h line:25
 	Memory management
-	Header files (inclusion guards) ✓
-	Arrays and pointers - ✓
-	Friendship - 
-	Global variables - ✓
-	Private, Public, Protected - ✓
+      ✓	Header files (inclusion guards) - mainwindow.h line:1
+      ✓	Arrays and pointers - mainwindow.cpp line:43
+      ✓	Friendship - fooditem.h line:28
+      ✓	Global variables - mainwindow.cpp line:187
+      ✓	Private, Public, Protected - mianwindow.h
 	
-QMenu - The QMenu class provides a menu widget for use in menu bars, context menus, and other popup menus.
-		https://doc.qt.io/qt-6/qmenu.html
-		
-		- Meals
-		
-QCheckBox - The QCheckBox widget provides a checkbox with a text label. 
-		https://doc.qt.io/qt-6/qcheckbox.html
-		
-		- Allergens
-		
-QRadioButton - The QRadioButton widget provides a radio button with a text label.
-		https://doc.qt.io/qt-6/qradiobutton.html
-		
-		- Spice Level
-		
-QSlider - The QSlider widget provides a vertical or horizontal slider.
-		https://doc.qt.io/qt-6/qslider.html
-		
-		- Rating
-		
-QGridLayout - The QGridLayout class lays out widgets in a grid.
-		https://doc.qt.io/qt-6/qgridlayout.html
-		
-		- Signup form
-		- Input my own food item
-		
-QBoxLayout - The QBoxLayout class lines up child widgets horizontally or vertically.
-		https://doc.qt.io/qt-6/qboxlayout.html
-		
-		- Portion Amount

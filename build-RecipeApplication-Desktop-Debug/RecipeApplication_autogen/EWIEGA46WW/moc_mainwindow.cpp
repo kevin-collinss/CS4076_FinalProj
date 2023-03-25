@@ -26,7 +26,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[24];
+    uint offsetsAndSizes[30];
     char stringdata0[11];
     char stringdata1[23];
     char stringdata2[1];
@@ -39,6 +39,9 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata9[17];
     char stringdata10[17];
     char stringdata11[9];
+    char stringdata12[25];
+    char stringdata13[6];
+    char stringdata14[25];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -55,7 +58,10 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(144, 17),  // "on_ounces_clicked"
         QT_MOC_LITERAL(162, 16),  // "on_grams_clicked"
         QT_MOC_LITERAL(179, 16),  // "updateCheckboxes"
-        QT_MOC_LITERAL(196, 8)   // "recipeNo"
+        QT_MOC_LITERAL(196, 8),  // "recipeNo"
+        QT_MOC_LITERAL(205, 24),  // "on_checkBox_stateChanged"
+        QT_MOC_LITERAL(230, 5),  // "state"
+        QT_MOC_LITERAL(236, 24)   // "on_actionAbout_triggered"
     },
     "MainWindow",
     "on_NoOfPpl_One_clicked",
@@ -68,7 +74,10 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "on_ounces_clicked",
     "on_grams_clicked",
     "updateCheckboxes",
-    "recipeNo"
+    "recipeNo",
+    "on_checkBox_stateChanged",
+    "state",
+    "on_actionAbout_triggered"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -79,7 +88,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,14 +96,16 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   62,    2, 0x08,    1 /* Private */,
-       3,    0,   63,    2, 0x08,    2 /* Private */,
-       4,    0,   64,    2, 0x08,    3 /* Private */,
-       5,    0,   65,    2, 0x08,    4 /* Private */,
-       6,    1,   66,    2, 0x08,    5 /* Private */,
-       8,    0,   69,    2, 0x08,    7 /* Private */,
-       9,    0,   70,    2, 0x08,    8 /* Private */,
-      10,    1,   71,    2, 0x08,    9 /* Private */,
+       1,    0,   74,    2, 0x08,    1 /* Private */,
+       3,    0,   75,    2, 0x08,    2 /* Private */,
+       4,    0,   76,    2, 0x08,    3 /* Private */,
+       5,    0,   77,    2, 0x08,    4 /* Private */,
+       6,    1,   78,    2, 0x08,    5 /* Private */,
+       8,    0,   81,    2, 0x08,    7 /* Private */,
+       9,    0,   82,    2, 0x08,    8 /* Private */,
+      10,    1,   83,    2, 0x08,    9 /* Private */,
+      12,    1,   86,    2, 0x08,   11 /* Private */,
+      14,    0,   89,    2, 0x08,   13 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -105,6 +116,8 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::Int,   13,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -135,7 +148,12 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'updateCheckboxes'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_checkBox_stateChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_actionAbout_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -154,6 +172,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->on_ounces_clicked(); break;
         case 6: _t->on_grams_clicked(); break;
         case 7: _t->updateCheckboxes((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->on_checkBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 9: _t->on_actionAbout_triggered(); break;
         default: ;
         }
     }
@@ -178,13 +198,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 10;
     }
     return _id;
 }

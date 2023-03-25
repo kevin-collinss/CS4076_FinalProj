@@ -2,7 +2,7 @@
 #define QUANTITY_H
 
 struct Quantity {
-    union {
+    union { //UNION
         double ounces;
         double grams;
     };

@@ -33,6 +33,11 @@ private slots:
 
     void updateCheckboxes(int recipeNo);
 
+    void on_checkBox_stateChanged(int state);
+
+
+    void on_actionAbout_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

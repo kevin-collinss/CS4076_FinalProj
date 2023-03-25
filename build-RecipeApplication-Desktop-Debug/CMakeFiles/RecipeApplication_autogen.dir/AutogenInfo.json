@@ -275,6 +275,12 @@
 			"MU",
 			"EWIEGA46WW/moc_recipe.cpp",
 			null
+		],
+		[
+			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/unitconversion.h",
+			"MU",
+			"EWIEGA46WW/moc_unitconversion.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
