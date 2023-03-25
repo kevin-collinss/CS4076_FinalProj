@@ -11,8 +11,8 @@ using namespace std;
 
 //global variables
 Recipe* recipeBookPtr[6];
-//FoodItem* foodListPtr[5];
 int servings = 1;
+bool useOunces = false; // Add this global variable
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -23,11 +23,16 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->verticalSlider,SIGNAL(valueChanged(int)),ui->label_pic,SLOT(setValue(int)));
     ui->verticalSlider->setTickInterval(5);
 
-    FoodItem* foodItemA = new FoodItemWithGrams("Noodles",500);
-    FoodItem* foodItemB = new FoodItemWithGrams("Chicken",30);
-    FoodItem* foodItemC = new FoodItemWithGrams("Potato",500);
+    QVBoxLayout *checkboxLayout = new QVBoxLayout(ui->checkBoxesWidget);
+    ui->checkBoxesWidget->setLayout(checkboxLayout);
+    checkboxLayout->setAlignment(Qt::AlignTop);
+
+    FoodItem* foodItemA = new FoodItemWithQuantity("Noodles", Quantity(5.2, false));
+    FoodItem* foodItemB = new FoodItemWithQuantity("Chicken", Quantity(6, false));
+    FoodItem* foodItemC = new FoodItemWithQuantity("Potato", Quantity(7.0, false));
     FoodItem* foodItemD = new FoodItem("Oyster Sauce");
-    FoodItem* foodItemE = new FoodItemWithGrams("Steak",600);
+    FoodItem* foodItemE = new FoodItemWithQuantity("Steak", Quantity(12.0, false));
+
 
 
     Recipe* recipeA = new Recipe("Spaghetti", "Italian", {foodItemA, foodItemC});
@@ -56,29 +61,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_NoOfPpl_One_clicked()
-{
-    servings = 1;
-
-}
-
-void MainWindow::on_NoOfPpl_Two_clicked()
-{
-   servings = 2;
-
-}
-
-void MainWindow::on_NoOfPpl_Three_clicked()
-{
-    servings = 3;
-
-}
-
-void MainWindow::on_NoOfPpl_Four_clicked()
-{
-    servings = 4;
-
-}
 
 void MainWindow::on_verticalSlider_valueChanged(int value )
 {
@@ -110,7 +92,78 @@ void MainWindow::on_verticalSlider_valueChanged(int value )
     ui->recipeLabel->setText(printIng(4));
     ui->label_pic->setPixmap(pix5);
     }
+
+    updateCheckboxes(recipeNo); // Add this line to call the function
 }
+
+void MainWindow::on_NoOfPpl_One_clicked()
+{
+    servings = 1;
+    int value = ui->verticalSlider->value();
+    int recipeNo = floor(value / 20);
+    ui->recipeLabel->setText(printIng(recipeNo));
+}
+
+void MainWindow::on_NoOfPpl_Two_clicked()
+{
+    servings = 2;
+    int value = ui->verticalSlider->value();
+    int recipeNo = floor(value / 20);
+    ui->recipeLabel->setText(printIng(recipeNo));
+}
+
+void MainWindow::on_NoOfPpl_Three_clicked()
+{
+    servings = 3;
+    int value = ui->verticalSlider->value();
+    int recipeNo = floor(value / 20);
+    ui->recipeLabel->setText(printIng(recipeNo));
+}
+
+void MainWindow::on_NoOfPpl_Four_clicked()
+{
+    servings = 4;
+    int value = ui->verticalSlider->value();
+    int recipeNo = floor(value / 20);
+    ui->recipeLabel->setText(printIng(recipeNo));
+}
+
+
+void MainWindow::on_ounces_clicked()
+{
+    useOunces = true; // Set the global variable
+    int value = ui->verticalSlider->value();
+    int recipeNo = floor(value / 20);
+    ui->recipeLabel->setText(printIng(recipeNo));
+}
+
+void MainWindow::on_grams_clicked()
+{
+    useOunces = false; // Set the global variable
+    int value = ui->verticalSlider->value();
+    int recipeNo = floor(value / 20);
+    ui->recipeLabel->setText(printIng(recipeNo));
+}
+
+void MainWindow::updateCheckboxes(int recipeNo) {
+    QVBoxLayout *checkboxLayout = qobject_cast<QVBoxLayout*>(ui->checkBoxesWidget->layout());
+
+    // Clear the existing checkboxes
+    QLayoutItem *item;
+    while ((item = checkboxLayout->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+
+    // Create a new checkbox for each food item in the current displayed recipe
+    for (int j = 0; j < recipeBookPtr[recipeNo]->getIngredients().size(); j++) {
+        FoodItem* item = recipeBookPtr[recipeNo]->getIngredients().at(j);
+        QCheckBox *checkBox = new QCheckBox(item->getName(), ui->checkBoxesWidget);
+        checkboxLayout->addWidget(checkBox);
+    }
+}
+
+
 
 QString MainWindow::printIng(int i) {
     QString list = "";
@@ -119,27 +172,21 @@ QString MainWindow::printIng(int i) {
         FoodItem* item = recipeBookPtr[i]->getIngredients().at(j);
         list.append(item->getName());
 
-        // Check if the item is also an instance of FoodItemWithGrams
-        if (FoodItemWithGrams* itemWithGrams = dynamic_cast<FoodItemWithGrams*>(item)) {
-            list.append(" (" + QString::number(servings * itemWithGrams->getGrams()) + " Grams)");
+        // Check if the item is also an instance of FoodItemWithQuantity
+        if (FoodItemWithQuantity* itemWithQuantity = dynamic_cast<FoodItemWithQuantity*>(item)) {
+            if (useOunces) { // Modify this condition
+                list.append(" (" + QString::number(servings * itemWithQuantity->getQuantity().ounces) + " oz)");
+            } else {
+                list.append(" (" + QString::number(round((28.3495 * servings * itemWithQuantity->getQuantity().grams) * 100) / 100) + " g)");
+            }
         }
 
         list.append("\n");
     }
 
+
     QString output = recipeBookPtr[i]->getName() + "\n" + recipeBookPtr[i]->getDescription() + "\n" + list;
 
     return output;
-}
-
-void MainWindow::on_grams_clicked()
-{
-
-}
-
-
-void MainWindow::on_ounces_clicked()
-{
-
 }
 

@@ -92,7 +92,7 @@
      <enum>QSlider::NoTicks</enum>
     </property>
     <property name="tickInterval">
-     <number>18</number>
+     <number>20</number>
     </property>
    </widget>
    <widget class="QLabel" name="recipeLabel">
@@ -126,46 +126,6 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>140</y>
-      <width>21</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QCheckBox" name="checkBox_2">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_3">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_4">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_5">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
       <x>10</x>
       <y>430</y>
       <width>133</width>
@@ -174,20 +134,30 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QRadioButton" name="ounces">
+      <widget class="QRadioButton" name="grams">
        <property name="text">
         <string>Grams</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="grams">
+      <widget class="QRadioButton" name="ounces">
        <property name="text">
         <string>Ounces</string>
        </property>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QWidget" name="checkBoxesWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>150</y>
+      <width>31</width>
+      <height>121</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

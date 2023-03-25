@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -22,7 +21,6 @@
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -43,15 +41,10 @@ public:
     QSlider *verticalSlider;
     QLabel *recipeLabel;
     QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
-    QCheckBox *checkBox_2;
-    QCheckBox *checkBox_3;
-    QCheckBox *checkBox_4;
-    QCheckBox *checkBox_5;
-    QWidget *widget;
     QHBoxLayout *horizontalLayout;
-    QRadioButton *ounces;
     QRadioButton *grams;
+    QRadioButton *ounces;
+    QWidget *checkBoxesWidget;
     QMenuBar *menubar;
     QMenu *menuHome;
     QStatusBar *statusbar;
@@ -103,8 +96,8 @@ public:
         verticalSlider->setGeometry(QRect(770, 30, 25, 451));
         verticalSlider->setOrientation(Qt::Vertical);
         verticalSlider->setInvertedControls(false);
-        verticalSlider->setTickPosition(QSlider::NoTicks);
-        verticalSlider->setTickInterval(18);
+        verticalSlider->setTickPosition(QSlider::TicksAbove);
+        verticalSlider->setTickInterval(20);
         recipeLabel = new QLabel(centralwidget);
         recipeLabel->setObjectName("recipeLabel");
         recipeLabel->setGeometry(QRect(140, 80, 371, 211));
@@ -120,46 +113,23 @@ public:
         recipeLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(110, 140, 21, 141));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        checkBox_2 = new QCheckBox(layoutWidget);
-        checkBox_2->setObjectName("checkBox_2");
-
-        verticalLayout->addWidget(checkBox_2);
-
-        checkBox_3 = new QCheckBox(layoutWidget);
-        checkBox_3->setObjectName("checkBox_3");
-
-        verticalLayout->addWidget(checkBox_3);
-
-        checkBox_4 = new QCheckBox(layoutWidget);
-        checkBox_4->setObjectName("checkBox_4");
-
-        verticalLayout->addWidget(checkBox_4);
-
-        checkBox_5 = new QCheckBox(layoutWidget);
-        checkBox_5->setObjectName("checkBox_5");
-
-        verticalLayout->addWidget(checkBox_5);
-
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(10, 430, 133, 24));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget->setGeometry(QRect(10, 430, 133, 24));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        ounces = new QRadioButton(widget);
-        ounces->setObjectName("ounces");
-
-        horizontalLayout->addWidget(ounces);
-
-        grams = new QRadioButton(widget);
+        grams = new QRadioButton(layoutWidget);
         grams->setObjectName("grams");
 
         horizontalLayout->addWidget(grams);
 
+        ounces = new QRadioButton(layoutWidget);
+        ounces->setObjectName("ounces");
+
+        horizontalLayout->addWidget(ounces);
+
+        checkBoxesWidget = new QWidget(centralwidget);
+        checkBoxesWidget->setObjectName("checkBoxesWidget");
+        checkBoxesWidget->setGeometry(QRect(100, 150, 31, 121));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -191,12 +161,8 @@ public:
         NoOfPpl_Four->setText(QCoreApplication::translate("MainWindow", "4 Serving", nullptr));
         NoOfPpl_One->setText(QCoreApplication::translate("MainWindow", "1 Serving", nullptr));
         recipeLabel->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        checkBox_2->setText(QString());
-        checkBox_3->setText(QString());
-        checkBox_4->setText(QString());
-        checkBox_5->setText(QString());
-        ounces->setText(QCoreApplication::translate("MainWindow", "Grams", nullptr));
-        grams->setText(QCoreApplication::translate("MainWindow", "Ounces", nullptr));
+        grams->setText(QCoreApplication::translate("MainWindow", "Grams", nullptr));
+        ounces->setText(QCoreApplication::translate("MainWindow", "Ounces", nullptr));
         menuHome->setTitle(QCoreApplication::translate("MainWindow", "Home", nullptr));
     } // retranslateUi
 

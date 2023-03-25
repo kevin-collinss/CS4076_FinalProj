@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "qboxlayout.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -16,35 +17,24 @@ public:
     ~MainWindow();
 
     QString printIng(int i);
-
-
+    QVBoxLayout* checkBoxLayout;
 
 private slots:
-
-
-    //int CheckSliderVal(QSlider verticalSlider);
-
     void on_NoOfPpl_One_clicked();
-
     void on_NoOfPpl_Three_clicked();
-
     void on_NoOfPpl_Two_clicked();
-
     void on_NoOfPpl_Four_clicked();
 
     void on_verticalSlider_valueChanged(int value);
 
-
-
+    void on_ounces_clicked();
 
     void on_grams_clicked();
 
-    void on_ounces_clicked();
+    void updateCheckboxes(int recipeNo);
 
 private:
     Ui::MainWindow *ui;
-
 };
-
 
 #endif // MAINWINDOW_H

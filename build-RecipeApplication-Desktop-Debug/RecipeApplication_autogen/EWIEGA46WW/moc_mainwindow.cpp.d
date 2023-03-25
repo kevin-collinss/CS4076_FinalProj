@@ -109,6 +109,10 @@ C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop-Debug/Re
   C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
+  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
+  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qlayout.h \
+  C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \

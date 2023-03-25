@@ -10,8 +10,8 @@ Must Use
 	
 Also try to use most of the following: 
 
-	Virtual functions - 
-	template classes - adding weights - int + doubles
+	Virtual functions -  ✓
+	template classes - 
 	Multiple inheritance 
 	namespaces - 
 	Programmer defined exceptions
@@ -22,11 +22,11 @@ Also try to use most of the following:
 	Bit structures - 
 	Advanced pre-processor directives
 	C++ Object Construction Sequence
-	Initializer List
+	Initializer List ✓
 	C++ References 
 	Pointers ✓
 	Inheritance ✓
-	Destructors
+	Destructors ✓
 	Memory management
 	Header files (inclusion guards) ✓
 	Arrays and pointers - ✓

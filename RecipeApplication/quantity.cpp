@@ -7,3 +7,5 @@ Quantity::Quantity(double value, bool ounces) : isOunces(ounces) {
         grams = value;
     }
 }
+
+

@@ -112,6 +112,10 @@ C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/QMainWindow
+ mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h
+ mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h
+ mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qlayout.h
+ mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/QtDev/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h

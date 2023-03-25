@@ -15,12 +15,11 @@ private:
 
 class FoodItemWithQuantity : public FoodItem {
 public:
-    FoodItemWithQuantity(const QString& name, Quantity quantity);
-    double getQuantity() const;
+    FoodItemWithQuantity(const QString& name, const Quantity& quantity);
+    const Quantity& getQuantity() const;
 
 private:
     Quantity m_quantity;
-    bool m_quantityInOunces;
 };
 
 #endif // FOODITEM_H
