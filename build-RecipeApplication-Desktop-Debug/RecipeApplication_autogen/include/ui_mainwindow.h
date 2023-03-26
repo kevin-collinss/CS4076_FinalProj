@@ -47,7 +47,7 @@ public:
     QRadioButton *ounces;
     QWidget *checkBoxesWidget;
     QLabel *nameplate;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QLabel *label_5;
     QLabel *label_4;
@@ -82,21 +82,27 @@ public:
         gridLayout->setContentsMargins(0, 0, 0, 0);
         NoOfPpl_Two = new QRadioButton(gridLayoutWidget);
         NoOfPpl_Two->setObjectName("NoOfPpl_Two");
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Stencil")});
+        NoOfPpl_Two->setFont(font);
 
         gridLayout->addWidget(NoOfPpl_Two, 0, 1, 1, 1);
 
         NoOfPpl_Three = new QRadioButton(gridLayoutWidget);
         NoOfPpl_Three->setObjectName("NoOfPpl_Three");
+        NoOfPpl_Three->setFont(font);
 
         gridLayout->addWidget(NoOfPpl_Three, 0, 2, 1, 1);
 
         NoOfPpl_Four = new QRadioButton(gridLayoutWidget);
         NoOfPpl_Four->setObjectName("NoOfPpl_Four");
+        NoOfPpl_Four->setFont(font);
 
         gridLayout->addWidget(NoOfPpl_Four, 0, 3, 1, 1);
 
         NoOfPpl_One = new QRadioButton(gridLayoutWidget);
         NoOfPpl_One->setObjectName("NoOfPpl_One");
+        NoOfPpl_One->setFont(font);
 
         gridLayout->addWidget(NoOfPpl_One, 0, 0, 1, 1);
 
@@ -116,24 +122,26 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(recipeLabel->sizePolicy().hasHeightForWidth());
         recipeLabel->setSizePolicy(sizePolicy);
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Stencil")});
-        font.setPointSize(20);
-        recipeLabel->setFont(font);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Stencil")});
+        font1.setPointSize(20);
+        recipeLabel->setFont(font1);
         recipeLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(10, 430, 133, 24));
+        layoutWidget->setGeometry(QRect(10, 430, 142, 24));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         grams = new QRadioButton(layoutWidget);
         grams->setObjectName("grams");
+        grams->setFont(font);
 
         horizontalLayout->addWidget(grams);
 
         ounces = new QRadioButton(layoutWidget);
         ounces->setObjectName("ounces");
+        ounces->setFont(font);
 
         horizontalLayout->addWidget(ounces);
 
@@ -143,47 +151,48 @@ public:
         nameplate = new QLabel(centralwidget);
         nameplate->setObjectName("nameplate");
         nameplate->setGeometry(QRect(60, 20, 531, 41));
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Stencil")});
-        font1.setPointSize(24);
-        nameplate->setFont(font1);
-        nameplate->setAlignment(Qt::AlignCenter);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(800, 20, 41, 451));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_5 = new QLabel(widget);
-        label_5->setObjectName("label_5");
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Stencil")});
-        font2.setPointSize(11);
-        label_5->setFont(font2);
+        font2.setPointSize(24);
+        font2.setUnderline(true);
+        nameplate->setFont(font2);
+        nameplate->setAlignment(Qt::AlignCenter);
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(800, 20, 41, 451));
+        verticalLayout = new QVBoxLayout(layoutWidget1);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label_5 = new QLabel(layoutWidget1);
+        label_5->setObjectName("label_5");
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Stencil")});
+        font3.setPointSize(11);
+        label_5->setFont(font3);
 
         verticalLayout->addWidget(label_5);
 
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget1);
         label_4->setObjectName("label_4");
-        label_4->setFont(font2);
+        label_4->setFont(font3);
 
         verticalLayout->addWidget(label_4);
 
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget1);
         label_3->setObjectName("label_3");
-        label_3->setFont(font2);
+        label_3->setFont(font3);
 
         verticalLayout->addWidget(label_3);
 
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget1);
         label_2->setObjectName("label_2");
-        label_2->setFont(font2);
+        label_2->setFont(font3);
 
         verticalLayout->addWidget(label_2);
 
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget1);
         label->setObjectName("label");
-        label->setFont(font2);
+        label->setFont(font3);
 
         verticalLayout->addWidget(label);
 

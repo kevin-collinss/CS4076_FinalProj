@@ -60,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent) //OBJECT CONSTRUCTION SEQUENCE
     recipeBookPtr[4]= recipeE;
     recipeBookPtr[5]= recipeF;
 
-    QPixmap defaultPic("C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic.jpg");
+    QPixmap defaultPic("C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic1.jpg");
     ui->recipeLabel->setText(printIng(0));
     ui->label_pic->setPixmap(defaultPic);
 
@@ -82,18 +82,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_verticalSlider_valueChanged(int value )
 {
-    QString picString1 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic.jpg";
-    QString picString2 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic2.jpg";
-    QString picString3 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic3.jpg";
-    QString picString4 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic4.jpg";
-    QString picString5 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic5.jpg";
-    QString picString6 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/egPic5.jpg";
+    QString picString1 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic1.jpg";
+    QString picString2 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic2.jpg";
+    QString picString3 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic3.jpg";
+    QString picString4 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic4.jpg";
+    QString picString5 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic5.jpg";
+    QString picString6 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic5.jpg";
     QPixmap pix1(picString1);
     QPixmap pix2(picString2);
     QPixmap pix3(picString3);
     QPixmap pix4(picString4);
     QPixmap pix5(picString5);
     QPixmap pix6(picString6);
+    /*
+    pix1 = pix1.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    pix2 = pix2.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    pix2 = pix3.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    pix3 = pix4.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    pix4 = pix5.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    pix5 = pix6.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    pix6 = pix6.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    */
 
     int recipeNo = floor(value / 20);
     if(recipeNo ==0){

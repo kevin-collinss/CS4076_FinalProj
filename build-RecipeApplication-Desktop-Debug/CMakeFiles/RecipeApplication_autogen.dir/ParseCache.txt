@@ -350,3 +350,5 @@ C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/fooditem.cpp
 C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.h
 C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.cpp
 C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/unitconversion.h
+C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/Recipe.h
+C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/Recipe.cpp

@@ -1,5 +1,7 @@
 RecipeApplication_autogen/timestamp: \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/CMakeLists.txt \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/recipe.cpp \
+  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/Recipe.h \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/fooditem.cpp \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/fooditem.h \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/main.cpp \
@@ -7,8 +9,6 @@ RecipeApplication_autogen/timestamp: \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/mainwindow.h \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.cpp \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.h \
-  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/recipe.cpp \
-  C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/recipe.h \
   C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/unitconversion.h \
   CMakeFiles/3.24.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \

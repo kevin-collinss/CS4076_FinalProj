@@ -253,6 +253,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/Recipe.h",
+			"MU",
+			"EWIEGA46WW/moc_Recipe.cpp",
+			null
+		],
+		[
 			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/fooditem.h",
 			"MU",
 			"EWIEGA46WW/moc_fooditem.cpp",
@@ -268,12 +274,6 @@
 			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.h",
 			"MU",
 			"EWIEGA46WW/moc_quantity.cpp",
-			null
-		],
-		[
-			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/recipe.h",
-			"MU",
-			"EWIEGA46WW/moc_recipe.cpp",
 			null
 		],
 		[
@@ -353,6 +353,11 @@
 	"SOURCES" : 
 	[
 		[
+			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/Recipe.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/fooditem.cpp",
 			"MU",
 			null
@@ -369,11 +374,6 @@
 		],
 		[
 			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/quantity.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/recipe.cpp",
 			"MU",
 			null
 		]
