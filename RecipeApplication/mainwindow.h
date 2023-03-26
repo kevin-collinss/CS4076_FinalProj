@@ -17,6 +17,7 @@ public:
     ~MainWindow();
 
     QString printIng(int i);
+    QString getNameDescription(int i);
     QVBoxLayout* checkBoxLayout;
 
 private slots:

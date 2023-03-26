@@ -62,6 +62,7 @@ MainWindow::MainWindow(QWidget *parent) //OBJECT CONSTRUCTION SEQUENCE
 
     QPixmap defaultPic("C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic1.jpg");
     ui->recipeLabel->setText(printIng(0));
+    ui->label_nameDescription->setText(getNameDescription(0));
     ui->label_pic->setPixmap(defaultPic);
 
     updateCheckboxes(0);
@@ -94,34 +95,21 @@ void MainWindow::on_verticalSlider_valueChanged(int value )
     QPixmap pix4(picString4);
     QPixmap pix5(picString5);
     QPixmap pix6(picString6);
-    /*
-    pix1 = pix1.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    pix2 = pix2.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    pix2 = pix3.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    pix3 = pix4.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    pix4 = pix5.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    pix5 = pix6.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    pix6 = pix6.scaled(500, 1200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    */
 
     int recipeNo = floor(value / 20);
+    ui->recipeLabel->setText(printIng(recipeNo));
+    ui->label_nameDescription->setText(getNameDescription(recipeNo));
     if(recipeNo ==0){
-    ui->recipeLabel->setText(printIng(0));
     ui->label_pic->setPixmap(pix1);
     }else if(recipeNo==1){
-    ui->recipeLabel->setText(printIng(1));
     ui->label_pic->setPixmap(pix2);
     }else if(recipeNo==2){
-    ui->recipeLabel->setText(printIng(2));
     ui->label_pic->setPixmap(pix3);
     }else if(recipeNo==3){
-    ui->recipeLabel->setText(printIng(3));
     ui->label_pic->setPixmap(pix4);
     }else if(recipeNo==4){
-    ui->recipeLabel->setText(printIng(4));
     ui->label_pic->setPixmap(pix5);}
     else if(recipeNo==5){
-        ui->recipeLabel->setText(printIng(5));
         ui->label_pic->setPixmap(pix6);
     }
 
@@ -179,6 +167,7 @@ void MainWindow::on_grams_clicked()
 
 void MainWindow::updateCheckboxes(int recipeNo) {
     QVBoxLayout *checkboxLayout = qobject_cast<QVBoxLayout*>(ui->checkBoxesWidget->layout());
+    checkboxLayout->setSpacing(22);
 
     // Clear the existing checkboxes
     QLayoutItem *item;
@@ -190,10 +179,10 @@ void MainWindow::updateCheckboxes(int recipeNo) {
     // Create a new checkbox for each food item in the current displayed recipe
     for (int j = 0; j < recipeBookPtr[recipeNo]->getIngredients().size(); j++) {
         FoodItem* item = recipeBookPtr[recipeNo]->getIngredients().at(j);
-        QCheckBox *checkBox = new QCheckBox(item->getName(), ui->checkBoxesWidget);
+        QCheckBox *checkBox = new QCheckBox("", ui->checkBoxesWidget);
         checkboxLayout->addWidget(checkBox);
 
-        // Connect the signal to the slot
+        // Connect the signal to the slotS
         connect(checkBox, &QCheckBox::stateChanged, this, &MainWindow::on_checkBox_stateChanged);
     }
 }
@@ -219,15 +208,20 @@ void MainWindow::on_checkBox_stateChanged(int state) {
     }
 }
 
+QString MainWindow::getNameDescription(int i) {
+    QString output = QString("<u>%1</u><br><u>%2</u>")
+                     .arg(recipeBookPtr[i]->getName())
+                     .arg(recipeBookPtr[i]->getDescription());
 
+    return output;
+}
 
 QString MainWindow::printIng(int i) {
     QString list = "";
 
-    for (const auto &item : recipeBookPtr[i]->getIngredients()) { //REFERENCE
+    for (const auto &item : recipeBookPtr[i]->getIngredients()) {
         list.append(item->getName());
 
-        // Check if the item is also an instance of FoodItemWithQuantity
         if (FoodItemWithQuantity* itemWithQuantity = dynamic_cast<FoodItemWithQuantity*>(item)) {
             if (useOunces) {
                 list.append(" (" + QString::number(servings * itemWithQuantity->m_quantity.ounces) + " oz)");
@@ -236,13 +230,12 @@ QString MainWindow::printIng(int i) {
             }
         }
 
-        list.append("\n");
+        list.append("<br>");
     }
 
-    QString output = recipeBookPtr[i]->getName() + "\n" + recipeBookPtr[i]->getDescription() + "\n" + list;
-
-    return output;
+    return list;
 }
+
 
 
 void MainWindow::on_actionAbout_triggered()
