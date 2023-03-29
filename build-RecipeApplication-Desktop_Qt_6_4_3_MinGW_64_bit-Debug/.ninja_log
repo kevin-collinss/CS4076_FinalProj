@@ -1,0 +1,12 @@
+# ninja log v5
+2	1203	7018148794949383	RecipeApplication_autogen/timestamp	27af9727231e213f
+2	1203	7018148794949383	RecipeApplication_autogen/mocs_compilation.cpp	27af9727231e213f
+2	1203	7018148794949383	C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/RecipeApplication_autogen/timestamp	27af9727231e213f
+2	1203	7018148794949383	C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/RecipeApplication_autogen/mocs_compilation.cpp	27af9727231e213f
+1242	1344	7018148798294207	CMakeFiles/RecipeApplication.dir/quantity.cpp.obj	504215c56762c549
+1223	2909	7018148813964535	CMakeFiles/RecipeApplication.dir/fooditem.cpp.obj	7016230765061e93
+1233	3148	7018148816355808	CMakeFiles/RecipeApplication.dir/recipe.cpp.obj	c395c1f1a7091d5f
+1204	4450	7018148829365715	CMakeFiles/RecipeApplication.dir/RecipeApplication_autogen/mocs_compilation.cpp.obj	1681d49c6ac2ecc0
+1209	4462	7018148829499949	CMakeFiles/RecipeApplication.dir/main.cpp.obj	464383beb90c8945
+1215	4904	7018148833848627	CMakeFiles/RecipeApplication.dir/mainwindow.cpp.obj	c214253a499d6309
+4905	5282	7018148837660228	RecipeApplication.exe	8ef00571985af9b7

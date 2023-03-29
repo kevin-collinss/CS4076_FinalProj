@@ -1,0 +1,8 @@
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/RecipeApplication.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/edit_cache.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/rebuild_cache.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/install.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/install/local.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/install/strip.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/RecipeApplication_autogen_timestamp_deps.dir
+C:/College/Year2_Sem2/CS4076/Final_Proj/build-RecipeApplication-Desktop_Qt_6_4_3_MinGW_64_bit-Debug/qtc_Ninja_Multi_Config/CMakeFiles/RecipeApplication_autogen.dir

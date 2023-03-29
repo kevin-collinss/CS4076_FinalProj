@@ -25,13 +25,16 @@ MainWindow::MainWindow(QWidget *parent) //OBJECT CONSTRUCTION SEQUENCE
 {
     ui->setupUi(this);
 
+    //connects the vert slider to pics
     connect(ui->verticalSlider,SIGNAL(valueChanged(int)),ui->label_pic,SLOT(setValue(int)));
     ui->verticalSlider->setTickInterval(5);
 
+    //creates layout in which the text boxes are placed rolling down from top
     QVBoxLayout *checkboxLayout = new QVBoxLayout(ui->checkBoxesWidget);
     ui->checkBoxesWidget->setLayout(checkboxLayout);
     checkboxLayout->setAlignment(Qt::AlignTop);
 
+    //creating food items
     FoodItem* foodItemA = new FoodItemWithQuantity("Spaghetti", Quantity(5.2, false));
     FoodItem* foodItemB = new FoodItemWithQuantity("Chicken", Quantity(6, false));
     FoodItem* foodItemC = new FoodItemWithQuantity("Rice", Quantity(7.0, false));
@@ -42,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent) //OBJECT CONSTRUCTION SEQUENCE
     FoodItem* foodItemH = new FoodItemWithQuantity("Stir Fry Veg", Quantity(5.5, false));
     FoodItem* foodItemI = new FoodItemWithQuantity("Mince", Quantity(5.5, false));
 
+    //creating recipes
     Recipe* recipeA = new Recipe("Spaghetti", "Italian", {foodItemA, foodItemI}); // ARRAY AND POINTER
     Recipe* recipeB= new Recipe("Chow Mein", "Oriental Delicacy",{foodItemC, foodItemD});
     Recipe* recipeC= new Recipe("Fajita", "Mexican Special",{foodItemB, foodItemD, foodItemH, foodItemE});
@@ -53,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent) //OBJECT CONSTRUCTION SEQUENCE
     FoodItem* extraIngredient = new FoodItemWithQuantity("Ghost Peppers", Quantity(2.5, false));
     recipeF->addIngredient(extraIngredient); // Adding an additional ingredient
 
+    //assigns mecipes into the array
     recipeBookPtr[0]= recipeA;
     recipeBookPtr[1]= recipeB;
     recipeBookPtr[2]= recipeC;
@@ -60,6 +65,7 @@ MainWindow::MainWindow(QWidget *parent) //OBJECT CONSTRUCTION SEQUENCE
     recipeBookPtr[4]= recipeE;
     recipeBookPtr[5]= recipeF;
 
+    //sets defaults
     QPixmap defaultPic("C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic1.jpg");
     ui->recipeLabel->setText(printIng(0));
     ui->label_nameDescription->setText(getNameDescription(0));
@@ -80,7 +86,9 @@ MainWindow::~MainWindow()
     }
 }
 
-
+/*
+ * when vertical slider val is changed it changes the displayed menu aswell as photo etc.
+*/
 void MainWindow::on_verticalSlider_valueChanged(int value )
 {
     QString picString1 = "C:/College/Year2_Sem2/CS4076/Final_Proj/RecipeApplication/pictures/Pic1.jpg";
@@ -116,6 +124,9 @@ void MainWindow::on_verticalSlider_valueChanged(int value )
     updateCheckboxes(recipeNo); // Add this line to call the function
 }
 
+/*
+ * Changes the ingredient weight size depending on how many ppl there are
+*/
 void MainWindow::on_NoOfPpl_One_clicked()
 {
     servings = 1;
@@ -149,6 +160,7 @@ void MainWindow::on_NoOfPpl_Four_clicked()
 }
 
 
+//changes what weight is displayed as
 void MainWindow::on_ounces_clicked()
 {
     useOunces = true; // Set the global variable
@@ -165,6 +177,7 @@ void MainWindow::on_grams_clicked()
     ui->recipeLabel->setText(printIng(recipeNo));
 }
 
+//udates the amount of checkboxes needed
 void MainWindow::updateCheckboxes(int recipeNo) {
     QVBoxLayout *checkboxLayout = qobject_cast<QVBoxLayout*>(ui->checkBoxesWidget->layout());
     checkboxLayout->setSpacing(22);
@@ -188,7 +201,7 @@ void MainWindow::updateCheckboxes(int recipeNo) {
 }
 
 
-
+//displays a message when all check boxes are checked
 void MainWindow::on_checkBox_stateChanged(int state) {
     QVBoxLayout *checkboxLayout = qobject_cast<QVBoxLayout*>(ui->checkBoxesWidget->layout());
     int totalCheckboxes = checkboxLayout->count();
@@ -208,6 +221,7 @@ void MainWindow::on_checkBox_stateChanged(int state) {
     }
 }
 
+//formatting to underline
 QString MainWindow::getNameDescription(int i) {
     QString output = QString("<u>%1</u><br><u>%2</u>")
                      .arg(recipeBookPtr[i]->getName())
@@ -216,10 +230,13 @@ QString MainWindow::getNameDescription(int i) {
     return output;
 }
 
+/*
+ *prints out food info to the screen
+*/
 QString MainWindow::printIng(int i) {
     QString list = "";
 
-    for (const auto &item : recipeBookPtr[i]->getIngredients()) {
+    for (const auto &item : recipeBookPtr[i]->getIngredients()) { //REFERENCE
         list.append(item->getName());
 
         if (FoodItemWithQuantity* itemWithQuantity = dynamic_cast<FoodItemWithQuantity*>(item)) {
